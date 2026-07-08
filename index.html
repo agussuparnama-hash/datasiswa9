@@ -2,15 +2,8 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Cek Data Siswa</title>
-    <style>
-        body{font-family:Arial; background:#f0f2f5; padding:20px;}
-        .card{max-width:600px; margin:auto; background:white; padding:25px; border-radius:12px; box-shadow:0 4px 6px rgba(0,0,0,0.1);}
-        input{width:100%; padding:12px; margin:8px 0; border:1px solid #ccc; border-radius:6px; box-sizing:border-box;}
-        button{width:100%; padding:12px; background:#007bff; color:white; border:none; border-radius:6px; cursor:pointer;}
-        .row{display:flex; padding:6px 0; border-bottom:1px solid #eee;}
-        .label{width:40%; font-weight:bold;}
-    </style>
+    <title>Verifikasi Data Siswa</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="card">
@@ -18,7 +11,7 @@
         <input type="text" id="nisn" maxlength="10" placeholder="Masukkan 10 digit NISN">
         <input type="date" id="tgl">
         <button onclick="cariData()">Tampilkan Data</button>
-        <div id="hasil" style="display:none; margin-top:20px;"></div>
+        <div id="hasil" style="display:none;"></div>
     </div>
     <script src="data.js"></script>
     <script src="script.js"></script>
