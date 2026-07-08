@@ -3,7 +3,13 @@ async function cariData() {
     const tglInput = document.getElementById('tgl_lahir').value;
 
     // Ganti URL di bawah dengan URL API dari Sheety
-    const apiUrl = 'URL_API_DARI_SHEETY_ANDA';
+    const apiUrl = 'let url = 'https://api.sheety.co/e6dbe63e67008054a54adaf0c7a93a7d/dataKls920271/daftarPesertaDidik (2)';
+fetch(url)
+.then((response) => response.json())
+.then(json => {
+  // Do something with the data
+  console.log(json.daftarPesertaDidik (2)s);
+});';
 
     try {
         const response = await fetch(apiUrl);
