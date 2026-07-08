@@ -1,38 +1,9 @@
-async function cariData() {
-    const nisnInput = document.getElementById('nisn').value;
-    const tglInput = document.getElementById('tgl_lahir').value;
-
-    // Ganti URL di bawah dengan URL API dari Sheety
-    const apiUrl = 'let url = 'https://api.sheety.co/e6dbe63e67008054a54adaf0c7a93a7d/dataKls920271/daftarPesertaDidik (2)';
-fetch(url)
-.then((response) => response.json())
-.then(json => {
-  // Do something with the data
-  console.log(json.daftarPesertaDidik (2)s);
-});';
-
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-
-        // Cari data yang cocok
-        // Sesuaikan 'dataSiswa' dengan nama tab di sheet Anda
-        const siswa = data.dataSiswa.find(item => item.nisn == nisnInput && item.tanggalLahir == tglInput);
-
-        const hasilDiv = document.getElementById('hasil');
-        hasilDiv.style.display = 'block';
-
-        if (siswa) {
-            hasilDiv.innerHTML = `
-                <h3>Data Ditemukan:</h3>
-                <p>Nama: ${siswa.nama}</p>
-                <a href="LINK_GOOGLE_FORM_ANDA" target="_blank" style="color:red">Lapor jika ada kesalahan</a>
-            `;
-        } else {
-            hasilDiv.innerHTML = "<p>Data tidak ditemukan. Silakan cek kembali.</p>";
-        }
-    } catch (error) {
-        console.error('Error:', error);
-        alert('Gagal mengambil data.');
-    }
-}
+body { font-family: sans-serif; background: #f0f2f5; padding: 20px; }
+.container { max-width: 500px; margin: auto; background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+.input-box { margin-bottom: 15px; }
+input { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+button { width: 100%; padding: 12px; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; }
+#hasil { margin-top: 20px; padding: 15px; border-top: 2px solid #eee; display: none; }
+.data-row { display: flex; padding: 5px 0; }
+.label-row { width: 40%; font-weight: bold; }
+.btn-lapor { display: block; margin-top: 15px; padding: 10px; background: #dc3545; color: white; text-align: center; text-decoration: none; border-radius: 5px; }
