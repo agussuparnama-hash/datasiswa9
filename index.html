@@ -3,39 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <title>Cek Data Siswa</title>
-    <style>
-        body { font-family: sans-serif; padding: 20px; }
-        .form-group { margin-bottom: 10px; }
-        #hasil { margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Cek Identitas Siswa</h2>
-    <div class="form-group">
-        <input type="text" id="nisn" placeholder="Masukkan NISN">
-        <input type="date" id="tgl_lahir">
-        <button onclick="cariData()">Cari</button>
+    <div class="container">
+        <h2>Verifikasi Data Siswa</h2>
+        <div class="input-box">
+            <label>NISN (10 Digit)</label>
+            <input type="text" id="nisn" maxlength="10" placeholder="Contoh: 0126191947" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
+        </div>
+        <div class="input-box">
+            <label>Tanggal Lahir</label>
+            <input type="date" id="tgl_lahir">
+        </div>
+        <button onclick="cariData()">Cari Data</button>
+        <div id="hasil"></div>
     </div>
-
-    <div id="hasil"></div>
-
-    <script>
-        // Ganti dengan URL CSV yang dipublish dari Google Sheets
-        const dataUrl = 'https://drive.google.com/file/d/1pNydY0oYZgIxG7CX9XPGaAGWBNElYA3z/view?usp=sharing';
-
-        async function cariData() {
-            const nisn = document.getElementById('nisn').value;
-            const tgl = document.getElementById('tgl_lahir').value;
-            
-            // Logika: Fetch data dan cari yang cocok
-            // Setelah data ditemukan, tampilkan di div #hasil
-            // Tambahkan link ke Google Form untuk komentar
-            document.getElementById('hasil').style.display = 'block';
-            document.getElementById('hasil').innerHTML = `
-                <p>Data Ditemukan: [Nama Siswa]</p>
-                <a href="URL_GOOGLE_FORM_ANDA" target="_blank">Laporkan Kesalahan Data</a>
-            `;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
