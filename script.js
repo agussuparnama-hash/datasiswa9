@@ -2,7 +2,6 @@ function cariData() {
     const nisn = document.getElementById('nisn').value;
     const tgl = document.getElementById('tgl').value;
     const hasil = document.getElementById('hasil');
-    
     const siswa = daftarSiswa.find(s => s.nisn === nisn && s.tgl === tgl);
     hasil.style.display = 'block';
 
