@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Cek Data Siswa</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .form-group { margin-bottom: 10px; }
+        #hasil { margin-top: 20px; padding: 10px; border: 1px solid #ccc; display: none; }
+    </style>
+</head>
+<body>
+    <h2>Cek Identitas Siswa</h2>
+    <div class="form-group">
+        <input type="text" id="nisn" placeholder="Masukkan NISN">
+        <input type="date" id="tgl_lahir">
+        <button onclick="cariData()">Cari</button>
+    </div>
+
+    <div id="hasil"></div>
+
+    <script>
+        // Ganti dengan URL CSV yang dipublish dari Google Sheets
+        const dataUrl = 'URL_CSV_GOOGLE_SHEETS_ANDA';
+
+        async function cariData() {
+            const nisn = document.getElementById('nisn').value;
+            const tgl = document.getElementById('tgl_lahir').value;
+            
+            // Logika: Fetch data dan cari yang cocok
+            // Setelah data ditemukan, tampilkan di div #hasil
+            // Tambahkan link ke Google Form untuk komentar
+            document.getElementById('hasil').style.display = 'block';
+            document.getElementById('hasil').innerHTML = `
+                <p>Data Ditemukan: [Nama Siswa]</p>
+                <a href="URL_GOOGLE_FORM_ANDA" target="_blank">Laporkan Kesalahan Data</a>
+            `;
+        }
+    </script>
+</body>
+</html>
